@@ -1,2 +1,2 @@
 
-print('Sveika, pasaule')
+print('Šodien ir pirmdiena!') #aleksis
