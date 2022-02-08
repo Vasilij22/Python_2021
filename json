@@ -1,0 +1,71 @@
+import json
+
+#Kaut kada vardnica
+
+vardnica =  {
+    "Vards":"Peteris",
+    "Izglitiba":"Videja",
+    "Vecums":36
+}
+
+#Parveido Python uz JSON
+
+a = json.dumps(vardnica)
+
+print(a)
+
+#Parveidot JSON uz Python
+
+b = json.loads(a)
+
+print(json.dumps(["kivi", "citrons"]))
+
+#dict - Objekt
+#list - Array
+#tuple - Array
+#str - String
+#int - Number
+#float - 
+#True - true
+#False - false
+#None - null
+
+py_data = {
+    "Vards":"Andrejs",
+    "Vecums":25,
+    "Dzivs":True,
+    "NeDzivs":False,
+    "Berni":("Gatis","Marija"),
+    "Dzivnieki":None,
+    "Masinas":[
+        {"Modelis":"Lamborgini","Gads":"2019"},
+        {"Modelis":"Audi", "Gads":"2020"}
+    ]
+}
+
+print(json.dumps(py_data, indent=4, separators=(".","=")))
+
+with open("Pirmais_json.json","w", encoding="utf-8") as fails:
+    json.dumps(py_data,fails, indent = 4, ensure_ascii=False)
+
+with open("pirmais_json","r", encoding="utf-8") as fails:
+    json_dati = json.load(fails)
+
+
+
+#Visas vertibas
+print(json_dati.value())
+
+#Parbaudi, vai dota atslega ir vardnica un izvadi tas vertibu
+
+atsl1 = "Vecums"
+
+for atslega in json_dati.keys():
+    if atslega == atsl1:
+        print(json_dati[atslega])
+    if atsl1 != atslega:
+        print(f"Izskatas, ka {atsl1} nav saraksta")
+
+#Nodifinet funkciju, kura ka argumentus izmantos
+#datnes nosaukumu un atslegas nosaukumu
+#jaizvada atslegas vertiba
