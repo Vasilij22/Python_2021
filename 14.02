@@ -1,0 +1,45 @@
+import csv
+
+
+def mana_csv(pirmaisCSV,otraisCSV):   
+    with open(pirmaisCSV, 'r', encoding="utf-8") as fails:
+        lasit_csv = csv.reader(fails)
+        saturs = []
+        for rinda in lasit_csv:
+            saturs.append(rinda)
+
+    with open(otraisCSV, 'r', encoding="utf-8") as fails:
+        lasit_csv = csv.reader(fails)
+        saturs_otrajam = []
+        for rinda in lasit_csv:
+            saturs_otrajam.append(rinda)       
+
+    if len(saturs) == len(saturs_otrajam):
+        with open('divikopa.csv', 'w',encoding="utf-8",newline='') as fails:
+            csvwrite = csv.writer(fails)
+            csvwrite.writerows(saturs)
+            csvwrite.writerows(saturs_otrajam)
+
+mana_csv("pirmais.csv","otrais.csv")
+
+unikalie = []
+
+for unik in saturs:
+       if unik not in saturs_otrajam:
+          unikalie.append(unik)
+
+print(unikalie)
+mana_csv("pirmais.csv","otrais.csv")
+
+vienadi = []
+
+for unik in saturs:
+       if unik not in saturs_otrajam:
+          unikalie.append(unik)
+
+print(unikalie)
+mana_csv("pirmais.csv","otrais.csv")
+
+
+
+   
