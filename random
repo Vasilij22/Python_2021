@@ -1,0 +1,7 @@
+import random
+
+masivs = ['a','b','c']
+
+izvele = random.choice(masivs)
+
+print(izvele)
